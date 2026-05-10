@@ -24,6 +24,11 @@ Les documents du projet se trouvent dans le dossier :
 ```text
 10_doc_ext/
 ```
+
+Vous trouverez le PDF du compte rendu sous le nom :
+```text
+Compte_Rendu_Projet.pdf
+```
 [Documentation](./20_doc_int/)
 
 ## Sources du projet
