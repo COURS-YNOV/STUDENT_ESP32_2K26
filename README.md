@@ -24,7 +24,7 @@ Les documents du projet se trouvent dans le dossier :
 ```text
 10_doc_ext/
 ```
-[Documentation](./10_doc_ext/)
+[Documentation](./20_doc_int/)
 
 ## Sources du projet
 Le projet Altium est situé dans :
