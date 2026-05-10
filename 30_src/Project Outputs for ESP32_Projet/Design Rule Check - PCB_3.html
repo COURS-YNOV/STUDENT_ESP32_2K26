@@ -1,0 +1,393 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD26\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">07/05/2026</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">16:26:26</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc" class="file"><acronym title="C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc">C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">11</td></tr>
+</table>
+</td>
+</table><a name="IDJAYYRLXIOBOLLZU2PEG2FDKDJKOXH1NUSDICLBH2CORZQ3IK4VKL"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0LQDGF5QW1ARFEBDO4DEW0HCIBRVKDLSUQ4GPZN4ZYGZ1PBKWXQH">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDP1KROVUASHSTFKZCQTHAPARNTDYIDPMGFZSYRERIQCWXWGBFLLF">Clearance Constraint (Gap=0.15mm) (OnOutside),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZZBQHF4QR5Z2LHTJ3XZPVCOFRNZIZDBNZJNJG0NACJKUKYL2ELMF">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHXULW4K0J1NQD4OCIEICOBGIROAV3BGBFUIWQSFO5XTZJVM2I2KF">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDW3VHZSJBFAE3JIPTXCQHEQYDWQIIAEI5WLCYIWQT0XMLSWRWUK">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZSACPSFABWTDJWS2K0F0E5J3UEO4HELWR3E30JFODSGIVICJZLXC">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIQSWHEXWKULUCBBOHDT5WO1EZJYYAVZQSRGWG0DV2E0LYHLDLBNG">Minimum Annular Ring (Minimum=0.09mm) (IsMicroVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCOPLRGKVLM2GLD3PZTMTJIHG5J12RRMU35LS2DMISYBDC5XGWTEI">Minimum Annular Ring (Minimum=0.125mm) (OnOutside)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDL3SQZ4EDGKGXDTPONAB20DDWPKRUXRWGFHSTO5FF1A2ZBTORMCSD">Minimum Annular Ring (Minimum=0.125mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID02OU0FHE1KKF0SIDIAXQA2U5O54A4QOA23X4DKL0HXOXCGX4RCG">Hole Size Constraint (Min=0.2mm) (Max=1000mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDW2YLT03FAKNJKYKJG10CIGJDX1LY3TUXXUMF2H1RSXEV24BWRVI">Hole To Hole Clearance (Gap=0.2mm) (IsMicroVia and ((StartLayer = 'Inner 1') and (StopLayer = 'Inner 2'))),(IsMicroVia and ((StartLayer = 'Inner 1') and (StopLayer = 'Inner 2')))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAHPC13CHBRU1P1RRMUH2F045TITGNGSXFZFE3EOITPA4C0KKNBRC">Hole To Hole Clearance (Gap=0.2mm) (IsMicroVia and ((StartLayer = 'Top Layer') and (StopLayer = 'Inner 1'))),(IsMicroVia and ((StartLayer = 'Top Layer') and (StopLayer = 'Inner 1')))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJVZEPYWH3V5AFHHBHHBUUV3ZTK3LYGYNYMWCBVNDC3E0LTON4LTD">Hole To Hole Clearance (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTRFAFXELC2LSEHXN353AETY0NNSGOONJM1RF5JF3DEUHFJ3M4UFL">Hole To Hole Clearance (Gap=0.01mm) (IsMicroVia),(IsMicroVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDJKOPFG2UFY2IJVZ5SKTON4T4F45GBCWEATI0DLQ53P0Y5VO1HMI">Minimum Solder Mask Sliver (Gap=0.149mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5LJ0SWHQANTBOMIRXOPQKDXDSK4RXIKI4ICRNCLYS3BFCZ2N02NM">Silk To Solder Mask (Clearance=0.124mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDF2DKRTA4SAKQOGXH0U0VXOWCGDBE0CZ2BHLJ04JLO031FIXTXCWP">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRSGZRQOWQLI0FZQ1JIK0AVLPJOECL3LCZFEMJCD3FMRS25JW2HTI">Net Antennae (Tolerance=10mm) (All)</a></td>
+<td class="column2">9</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTTZX2RYEFKASNETWXU2XFTDQ2INZF0WYIUVCODLNEUVQJ454R5CH">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">11</td>
+</tr>
+</table><br><a name="IDP1KROVUASHSTFKZCQTHAPARNTDYIDPMGFZSYRERIQCWXWGBFLLF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.15mm) (OnOutside),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3225.517mil|Location2.X=3232.672mil|Location1.Y=3173.812mil|Location2.Y=3180.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3225.517mil|Location2.X=3232.672mil|Location1.Y=3173.812mil|Location2.Y=3180.968mil|Absolute=True">Clearance Constraint: (0.084mm &lt; 0.15mm) Between Track (22.327mm,20.117mm)(31.082mm,20.117mm) on Bottom Layer And Via (22.733mm,19.533mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDHXULW4K0J1NQD4OCIEICOBGIROAV3BGBFUIWQSFO5XTZJVM2I2KF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3202.11mil|Location2.X=3439.512mil|Location1.Y=3157.418mil|Location2.Y=3357.418mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3202.11mil|Location2.X=3439.512mil|Location1.Y=3157.418mil|Location2.Y=3357.418mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad -11(24.588mm,22.032mm) on Top Layer And Track (25.538mm,22.032mm)(25.588mm,22.082mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDRSGZRQOWQLI0FZQ1JIK0AVLPJOECL3LCZFEMJCD3FMRS25JW2HTI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=10mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3371.446mil|Location2.X=3405.576mil|Location1.Y=3289.352mil|Location2.Y=3340.936mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3371.446mil|Location2.X=3405.576mil|Location1.Y=3289.352mil|Location2.Y=3340.936mil|Absolute=True">Net Antennae: Via (26.688mm,23.182mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3371.446mil|Location2.X=3405.576mil|Location1.Y=3332.657mil|Location2.Y=3384.242mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3371.446mil|Location2.X=3405.576mil|Location1.Y=3332.657mil|Location2.Y=3384.242mil|Absolute=True">Net Antennae: Via (26.688mm,24.282mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3371.446mil|Location2.X=3405.576mil|Location1.Y=3375.965mil|Location2.Y=3427.55mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3371.446mil|Location2.X=3405.576mil|Location1.Y=3375.965mil|Location2.Y=3427.55mil|Absolute=True">Net Antennae: Via (26.688mm,25.382mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.752mil|Location2.X=3448.882mil|Location1.Y=3289.352mil|Location2.Y=3340.936mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.752mil|Location2.X=3448.882mil|Location1.Y=3289.352mil|Location2.Y=3340.936mil|Absolute=True">Net Antennae: Via (27.788mm,23.182mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.752mil|Location2.X=3448.882mil|Location1.Y=3332.657mil|Location2.Y=3384.242mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.752mil|Location2.X=3448.882mil|Location1.Y=3332.657mil|Location2.Y=3384.242mil|Absolute=True">Net Antennae: Via (27.788mm,24.282mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.752mil|Location2.X=3448.882mil|Location1.Y=3375.965mil|Location2.Y=3427.55mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.752mil|Location2.X=3448.882mil|Location1.Y=3375.965mil|Location2.Y=3427.55mil|Absolute=True">Net Antennae: Via (27.788mm,25.382mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3458.06mil|Location2.X=3492.19mil|Location1.Y=3289.352mil|Location2.Y=3340.936mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3458.06mil|Location2.X=3492.19mil|Location1.Y=3289.352mil|Location2.Y=3340.936mil|Absolute=True">Net Antennae: Via (28.888mm,23.182mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3458.06mil|Location2.X=3492.19mil|Location1.Y=3332.657mil|Location2.Y=3384.242mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3458.06mil|Location2.X=3492.19mil|Location1.Y=3332.657mil|Location2.Y=3384.242mil|Absolute=True">Net Antennae: Via (28.888mm,24.282mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3458.06mil|Location2.X=3492.19mil|Location1.Y=3375.965mil|Location2.Y=3427.55mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3458.06mil|Location2.X=3492.19mil|Location1.Y=3375.965mil|Location2.Y=3427.55mil|Absolute=True">Net Antennae: Via (28.888mm,25.382mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

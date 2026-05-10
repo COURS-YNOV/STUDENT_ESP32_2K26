@@ -1,0 +1,72 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Pauline\Documents\Pauline_Altium\Projet_ESP32_DEV - 2026 - STUDENT\Projet_ESP32_DEV - 2026 - STUDENT\30_src\PCB\PCB_V_A_0.PcbDoc
+Date     : 10/05/2026
+Time     : 21:20:20
+
+Processing Rule : Clearance Constraint (Gap=0.15mm) (OnOutside),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.15mm) (Max=3mm) (Preferred=0.15mm) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.264mm) (Max=0.624mm) (Preferred=0.624mm) (InNet('NetC300_2'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.264mm) (Max=0.624mm) (Preferred=0.624mm) (InNet('NetC301_2'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.125mm) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.125mm) (OnOutside)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.09mm) (IsMicroVia)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.19mm) (Max=1000mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.2mm) (IsMicroVia and ((StartLayer = 'Inner 1') and (StopLayer = 'Inner 2'))),(IsMicroVia and ((StartLayer = 'Inner 1') and (StopLayer = 'Inner 2')))
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.2mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.01mm) (IsMicroVia),(IsMicroVia)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.2mm) (IsMicroVia and ((StartLayer = 'Top Layer') and (StopLayer = 'Inner 1'))),(IsMicroVia and ((StartLayer = 'Top Layer') and (StopLayer = 'Inner 1')))
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.149mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.124mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 0
+Waived Violations : 0
+Time Elapsed        : 00:00:01

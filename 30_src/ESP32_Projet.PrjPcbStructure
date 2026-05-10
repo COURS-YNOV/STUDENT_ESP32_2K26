@@ -1,0 +1,7 @@
+Record=TopLevelDocument|FileName=Capteurs_et_Antenne.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=Capteurs_et_Antenne.SchDoc|FileName=Converti_Alim.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=Capteurs_et_Antenne.SchDoc|FileName=ESP32_SRAM.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=Capteurs_et_Antenne.SchDoc|FileName=I2C.SchDoc|SheetNumber=7
+Record=NoMainPathDocument|SourceDocument=Capteurs_et_Antenne.SchDoc|FileName=IHM.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=Capteurs_et_Antenne.SchDoc|FileName=Logique_Prio_Alim.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=Capteurs_et_Antenne.SchDoc|FileName=USB.SchDoc|SheetNumber=6

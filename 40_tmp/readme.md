@@ -1,1 +1,0 @@
-Fichiers temporaires, tout ce qui est dans ce dossier, excepté ce fichier readme.md, doit être ignoré par GIT.
