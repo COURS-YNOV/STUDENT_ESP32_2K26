@@ -24,6 +24,7 @@ Les documents du projet se trouvent dans le dossier :
 ```text
 10_doc_ext/
 ```
+[Documentation](./10_doc_ext/)
 
 ## Sources du projet
 Le projet Altium est situé dans :
@@ -39,6 +40,7 @@ Fichier principal PCB:
 ```text
 ESP32_Projet.PcbDoc
 ```
+[Sources du projet](./30_src/)
 
 ## Difficultés rencontrées
 
